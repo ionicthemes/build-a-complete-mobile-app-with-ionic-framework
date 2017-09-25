@@ -1,0 +1,54 @@
+learn-feed-page {
+	.search-query
+	{
+		font-size: 1.4rem;
+		margin: 12px;
+		margin-bottom: 30px;
+		color: $theme-color-3;
+		text-align: center;
+
+		.query-tag
+		{
+			border: 1px solid $theme-color-2;
+			color: $theme-color-2;
+			background: #FFF;
+		}
+
+		.query-explanation
+		{
+			font-weight: 300;
+		}
+	}
+
+	.category-concept-card
+	{
+		background-color: $theme-color-3;
+		border-radius: 15px;
+		box-shadow: none;
+		margin-bottom: 20px;
+
+		.category-title
+		{
+			color: #FFF;
+			font-weight: 600;
+			font-size: 2.2rem;
+			margin: 0px;
+		}
+
+		.category-description
+		{
+			color: #FFF;
+			margin-bottom: 20px;
+		}
+
+		.category-tag
+		{
+			border: 1px solid #FFF;
+			color: #FFF;
+			background: transparent;
+			font-weight: 300;
+			margin-right: 4px;
+			opacity: 0.6;
+		}
+	}
+}

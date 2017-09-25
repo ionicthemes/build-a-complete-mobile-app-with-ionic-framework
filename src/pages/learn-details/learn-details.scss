@@ -1,0 +1,192 @@
+learn-details-page {
+	.category-concept-details
+	{
+		background-color: $theme-color-3;
+		padding: 16px 12px;
+		height: 35%;
+		align-content: space-around;
+
+		.category-title
+		{
+			color: #FFF;
+			font-weight: 600;
+			font-size: 2.4rem;
+			margin: 0px;
+			text-align: center;
+		}
+
+		.category-description
+		{
+			color: #FFF;
+			font-size: 1.6rem;
+			margin: 0px;
+			text-align: center;
+		}
+	}
+
+	.questions-call-out
+	{
+		font-size: 1.4rem;
+		margin: 12px;
+		margin-bottom: 30px;
+		color: $theme-color-3;
+		text-align: center;
+		line-height: 1.8;
+
+		.call-out-tag
+		{
+			border: 1px solid $theme-color-2;
+			color: $theme-color-2;
+			background: #FFF;
+		}
+
+		.call-out-explanation
+		{
+			font-weight: 300;
+		}
+	}
+
+	.questions-list
+	{
+		margin: 0px;
+	}
+
+	.question-item
+	{
+		padding: 0px;
+
+		&:last-child
+		{
+			border-bottom: none !important;
+		}
+
+		.item-inner
+		{
+			padding: 0px !important;
+
+			ion-label {
+				margin: 0px;
+			}
+		}
+
+		.votes-col
+		{
+			background-color: $white-b;
+
+			.vote-button
+			{
+				font-size: 2.2rem;
+			  margin: 0px;
+			  padding: 0px;
+			  width: 100%;
+				height: 4rem;
+
+				ion-icon {
+					padding: 0px;
+				}
+
+				&.up-vote
+				{
+					color: color($colors, secondary);
+					opacity: 0.25;
+				}
+
+				&.down-vote
+				{
+					color: color($colors, danger);
+					opacity: 0.25;
+				}
+
+				&.activated
+				{
+					opacity: 1;
+				}
+			}
+
+			.question-score
+			{
+				margin: 0px;
+				text-align: center;
+				font-size: 2rem;
+				font-weight: 500;
+				display: block;
+
+				&.good-score
+				{
+					color: color($colors, secondary);
+				}
+
+				&.no-score
+				{
+					color: $theme-color-3;
+					opacity: 0.3;
+				}
+
+				&.bad-score
+				{
+					color: color($colors, danger);
+				}
+			}
+		}
+
+		.question-details
+		{
+			height: 100%;
+			align-content: space-between;
+			justify-content: space-between;
+
+			.question-text
+			{
+				color: $theme-color-3;
+				margin: 0px;
+				font-weight: 500;
+				font-size: 1.6rem;
+				line-height: 1.4;
+			  white-space: normal;
+			}
+
+			.actions-details
+			{
+				align-self: flex-end;
+  			text-align: right;
+
+				.delete-button
+				{
+					margin: 0px;
+					font-size: 1.6rem;
+				}
+			}
+
+			.votes-details,
+			.answers-details
+			{
+				align-self: center;
+
+				.details-wrapper
+				{
+					font-size: 1.2rem;
+					background-color: $black-c;
+					color: $white-b;
+					text-align: center;
+					border-radius: 6px;
+					margin: 4px;
+					padding: 3px 0px 6px;
+				}
+
+				.details-text
+				{
+					display: block;
+				}
+
+				.total-votes,
+				.total-answers
+				{
+					display: block;
+					font-weight: 500;
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+	}
+}

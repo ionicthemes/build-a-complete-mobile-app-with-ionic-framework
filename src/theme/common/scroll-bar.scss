@@ -1,0 +1,9 @@
+// Hide all scroll indicators
+.scroll-bar-indicator
+{
+  opacity: 0;
+}
+::-webkit-scrollbar
+{
+  display: none;
+}

@@ -1,0 +1,21 @@
+@mixin header-styles($background, $color){
+	.toolbar-background
+	{
+		border: none !important;
+		background-color: $background;
+	}
+
+	.toolbar-title,
+	.back-button,
+	.bar-button
+	{
+		color: $color;
+	}
+}
+
+ion-header {
+	@include header-styles(color($colors, header, base), color($colors, header, contrast));
+}
+ion-footer {
+	@include header-styles(color($colors, header, base), color($colors, header, contrast));
+}

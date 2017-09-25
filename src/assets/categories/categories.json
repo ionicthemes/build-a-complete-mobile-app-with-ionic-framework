@@ -1,0 +1,63 @@
+{
+  "categories": [
+    {
+      "slug": "IONIC-3",
+      "title": "Ionic 3",
+      "description": "Ask about Ionic 3",
+      "background": "#0077ff",
+      "tags": [
+        {
+          "name": "Ionic3"
+        },
+        {
+          "name": "Angular4"
+        },
+        {
+          "name": "Typescript"
+        }
+      ]
+    },
+    {
+      "slug": "ANGULAR-4",
+      "title": "Angular 4",
+      "description": "Ask about Angular 4",
+      "background": "#F84C61",
+      "tags":[
+        {
+          "name": "Typescript"
+        },
+        {
+          "name": "Angular4"
+        }
+      ]
+    },
+    {
+      "slug": "IONIC-NATIVE",
+      "title": "Ionic Native",
+      "description": "Ask about Ionic Native",
+      "background": "#16144A",
+      "tags": [
+        {
+            "name": "Ionic3"
+        },
+        {
+            "name": "Plugins"
+        }
+      ]
+    },
+    {
+      "slug": "IONIC-CLI",
+      "title": "Ionic CLI",
+      "description": "Ask about Ionic CLI",
+      "background": "#432B9C",
+      "tags": [
+        {
+            "name": "Ionic3"
+        },
+        {
+            "name": "CLI"
+        }
+      ]
+    }
+  ]
+}

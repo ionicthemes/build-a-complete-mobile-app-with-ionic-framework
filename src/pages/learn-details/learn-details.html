@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span>Learn Ionic!</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="category-concept-details" [style.background-color]="category.background">
+    <ion-col no-padding col-12>
+      <h2 class="category-title">Learn all about {{ category.title }}!</h2>
+    </ion-col>
+    <ion-col no-padding col-12>
+      <p class="category-description">
+        {{ category.description }}
+      </p>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="questions.length == 0">
+    <h3 class="questions-call-out">
+      There are no questions at the time
+    </h3>
+  </div>
+
+  <div *ngIf="questions.length > 0">
+    <h3 class="questions-call-out">
+      <span>Find all the Questions and Answers about </span>
+      <ion-badge class="call-out-tag">{{ category.title }}</ion-badge>
+      <span class="call-out-explanation"> from the community</span>
+    </h3>
+
+    <ion-list class="questions-list">
+      <ion-item class="question-item" *ngFor="let question of questions">
+        <ion-row>
+          <ion-col class="votes-col" col-2>
+            <button class="vote-button up-vote" ion-button clear small (click)= "addPositiveVote(question)">
+              <ion-icon name="arrow-up"></ion-icon>
+            </button>
+            <span class="question-score" [ngClass]="{'good-score': (question.positiveVotes - question.negativeVotes) > 0, 'no-score': (question.positiveVotes - question.negativeVotes) == 0, 'bad-score': (question.positiveVotes - question.negativeVotes) < 0}">{{ question.positiveVotes - question.negativeVotes }}</span>
+            <button class="vote-button down-vote" ion-button clear small (click)= "addNegativeVote(question)">
+              <ion-icon name="arrow-down"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-10>
+            <ion-row class="question-details">
+              <ion-col col-12>
+                <h2 class="question-text" (click)="openAnswers(question)">{{ question.question }}</h2>
+              </ion-col>
+              <ion-col col-4 class="votes-details">
+                <div class="details-wrapper">
+                  <span class="total-votes">{{ question.positiveVotes + question.negativeVotes }}</span>
+                  <span class="details-text">Votes</span>
+                </div>
+              </ion-col>
+              <ion-col col-4 class="answers-details" (click)="openAnswers(question)">
+                <div class="details-wrapper">
+                  <span class="total-answers">{{ question.answers.length }}</span>
+                  <span class="details-text">{{ (question.answers.length > 1 || question.answers.length == 0) ? 'Answers' : 'Answer' }}</span>
+                </div>
+              </ion-col>
+              <ion-col col-4 class="actions-details">
+                <button class="delete-button" ion-button small round clear icon-only color="danger" (click)="delete(question.id)">
+                  <ion-icon name="ios-trash-outline"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block (click)="createQuestionModal()" color="ask">
+      <b>Have a Question? Ask!</b>
+    </button>
+  </ion-toolbar>
+</ion-footer>

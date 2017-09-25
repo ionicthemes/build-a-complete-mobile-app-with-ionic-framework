@@ -1,0 +1,48 @@
+ion-modal {
+	.modal-content
+	{
+		background-color: rgba($black-b, 1);
+
+		.modal-form
+		{
+			margin-top: 30px;
+
+			ion-item.textarea-item
+			{
+				background-color: rgba($black-b, 1);
+				padding: 0px;
+
+				.item-inner
+				{
+					padding: 0px;
+					border-bottom: none;
+				}
+
+				ion-label {
+					color: $black-b;
+					margin: 8px 8px 0px;
+				}
+
+				&.input-has-focus
+				{
+					ion-label {
+						color: $white-b;
+						margin: 0px 0px 8px;
+					}
+				}
+
+				ion-textarea {
+					background-color: $white-b;
+					color: $black-b;
+					border-radius: 4px;
+
+					textarea.text-input
+					{
+						margin: 8px;
+						width: calc(100% - 16px);
+					}
+				}
+			}
+		}
+	}
+}

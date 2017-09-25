@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span>Question details</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="question-details">
+    <ion-row class="details-content">
+      <ion-col no-padding col-12>
+        <h1 class="question-title">{{ question.question }}</h1>
+      </ion-col>
+      <ion-col no-padding col-12>
+        <p class="vote-call-to-action">
+          Was this question usefull? Rate it!
+        </p>
+        <ion-row class="question-actions-row">
+          <ion-col no-padding col-4>
+            <button class="question-action-button up-vote" ion-button icon-left round block small color="dark" (click)= "upVoteQuestion()">
+              <ion-icon name="arrow-up"></ion-icon>
+              <div>Up-vote</div>
+            </button>
+          </ion-col>
+          <ion-col no-padding col-3 class="score-col">
+            <div class="score-wrapper">
+              <span class="question-score" [ngClass]="{'good-score': (question.positiveVotes - question.negativeVotes) > 0, 'no-score': (question.positiveVotes - question.negativeVotes) == 0, 'bad-score': (question.positiveVotes - question.negativeVotes) < 0}">{{ question.positiveVotes - question.negativeVotes }}</span>
+              <button class="favourite-button" ion-button small round clear icon-only>
+                <ion-icon name="ios-star"></ion-icon>
+              </button>
+            </div>
+          </ion-col>
+          <ion-col no-padding col-4>
+            <button class="question-action-button down-vote" ion-button icon-left round block small color="dark" (click)= "downVoteQuestion()">
+              <ion-icon name="arrow-down"></ion-icon>
+              <div>Down-vote</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="answers.length == 0">
+    <h3 class="answers-call-out">
+      There are no answers to this question. Be the first one to answer!
+    </h3>
+  </div>
+
+  <div *ngIf="answers.length > 0">
+    <h3 class="answers-call-out">
+      <span class="call-out-explanation">We found </span>
+      <ion-badge class="call-out-tag">{{ answers.length }}</ion-badge>
+      <span> Answers for this question!</span>
+    </h3>
+
+    <ion-list class="answers-list">
+      <ion-item class="answer-item" *ngFor="let answer of answers">
+        <ion-row>
+          <ion-col class="votes-col" col-2>
+            <button class="vote-button up-vote" ion-button clear small (click)= "addPositiveVote(answer)">
+              <ion-icon name="arrow-up"></ion-icon>
+            </button>
+            <span class="answer-score" [ngClass]="{'good-score': (answer.positiveVotes - answer.negativeVotes) > 0, 'no-score': (answer.positiveVotes - answer.negativeVotes) == 0, 'bad-score': (answer.positiveVotes - answer.negativeVotes) < 0}">{{ answer.positiveVotes - answer.negativeVotes }}</span>
+            <button class="vote-button down-vote" ion-button clear small (click)= "addNegativeVote(answer)">
+              <ion-icon name="arrow-down"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-10>
+            <ion-row class="answer-details">
+              <ion-col col-12>
+                <p class="answer-text">{{ answer.answer }}</p>
+              </ion-col>
+              <ion-col col-4 class="votes-details">
+                <div class="details-wrapper">
+                  <span class="total-votes">{{ answer.positiveVotes + answer.negativeVotes }}</span>
+                  <span class="details-text">Votes</span>
+                </div>
+              </ion-col>
+              <ion-col col-4 class="actions-details">
+                <button class="edit-button" ion-button small round clear icon-only color="dark" (click)="editAnswerModal(answer)">
+                  <ion-icon name="md-create"></ion-icon>
+                </button>
+                <button class="delete-button" ion-button small round clear icon-only color="danger" (click)="delete(answer.id)">
+                  <ion-icon name="ios-trash-outline"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block (click)="createAnswerModal()" color="answer">
+      <b>Know the Answer? Don't be shy!</b>
+    </button>
+  </ion-toolbar>
+</ion-footer>
