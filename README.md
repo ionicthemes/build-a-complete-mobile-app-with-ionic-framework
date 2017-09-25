@@ -2,9 +2,9 @@ This repository is part of an ionic tutorial that explains how to build an ionic
 
 Check the complete step by step tutorial in: https://ionicthemes.com/tutorials/about/building-a-complete-mobile-app-with-ionic-3
 
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_1.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_2.png)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_4.png)
+![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_1.png?v=1)
+![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_2.png?v=1)
+![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_4.png?v=1)
 
 ## Installation
 
