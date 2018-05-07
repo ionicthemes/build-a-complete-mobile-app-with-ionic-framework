@@ -1,4 +1,4 @@
-This repository is part of an ionic tutorial that explains how to build an ionic example app with a question and answer format (Q&A). We will go through the core concepts of an Ionic 2+ App such as Project Structure, Navigation, UI/UX and Data Integration. This ionic tutorial includes a working example you can reuse for your needs!
+This repository is part of an ionic tutorial that explains how to build an ionic example app with a question and answer format (Q&A). We will go through the core concepts of an Ionic 3 App such as Project Structure, Navigation, UI/UX and Data Integration. This ionic tutorial includes a working example you can reuse for your needs!
 
 
 **Please support this project by simply putting a Github star ⭐. Share this library with friends on Twitter and everywhere else you can. 🙏**
