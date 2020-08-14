@@ -1,0 +1,227 @@
+.question-details-main-toolbar {
+  // Override Ionic properties
+  @at-root ion-toolbar#{&} {
+    --background: transparent;
+    --color: var(--ion-color-tertiary-contrast);
+  }
+}
+
+ion-content {
+  position: absolute;
+  top: 0;
+  border-top: var(--app-header-height);
+  border-top-style: solid;
+  border-top-color: var(--ion-color-tertiary);
+}
+
+.question-details-wrapper {
+  padding-bottom: 70px;
+}
+
+.question-fixed-content {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  height: 70px;
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+}
+
+.answer-question-btn {
+  margin: 0;
+  flex: 1 0 100%;
+  height: 100%;
+
+  // Override Ionic properties
+  @at-root ion-button#{&} {
+    font-weight: 600;
+  }
+}
+
+:host {
+  --vote-box-height: 90px;
+}
+
+.question-brief {
+  background: var(--ion-color-tertiary);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: calc(var(--vote-box-height) / 2);
+
+  .question-title {
+    margin: 30px 10% 0px;
+    text-align: center;
+    color: var(--ion-color-tertiary-contrast);
+  }
+
+  .question-description {
+    margin: 20px 15%;
+    text-align: center;
+    color: #FFF;
+  }
+}
+
+.vote-question-box-row {
+  margin: 0px 16px;
+  margin-top: calc(calc(var(--vote-box-height) / 2) * -1);
+  height: var(--vote-box-height);
+
+  // Override Ionic properties
+  @at-root ion-row#{&} {
+    --ion-grid-column-padding: 0px;
+  }
+
+  .vote-call-to-action {
+    display: flex;
+    flex-direction: column;
+
+    .call-to-action-message {
+      margin: 0px 16px;
+      margin-top: auto;
+      height: calc(var(--vote-box-height) / 2);
+      line-height: calc(var(--vote-box-height) / 2);
+      text-align: center;
+      color: var(--ion-color-medium-tint);
+
+      b {
+        color: var(--ion-color-tertiary);
+        margin-inline-start: 4px;
+      }
+    }
+  }
+
+  .vote-question-actions-col {
+    padding-inline-start: 12px;
+  }
+
+  .vote-actions {
+    height: 100%;
+  }
+}
+
+.answers-call-out {
+  margin: 30px 20px 10px;
+  color: rgba(51, 51, 51, 0.8);
+  text-align: center;
+  line-height: 1.4;
+
+  ion-badge {
+    vertical-align: sub;
+    text-transform: uppercase;
+    margin: 0px 6px;
+  }
+}
+
+
+.question-answer-item-row {
+  margin: 24px 16px;
+
+  // Override Ionic properties
+  @at-root ion-row#{&} {
+    --ion-grid-column-padding: 0px;
+  }
+}
+
+.answer-reputation-col {
+  padding-inline-end: 12px;
+}
+
+.item-reputation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  // Override Ionic properties
+  @at-root ion-card#{&} {
+    margin: 0px;
+  }
+
+  ion-button {
+    --padding-start: 6px;
+    --padding-end: 6px;
+  }
+
+  .reputation-score {
+    --reputation-score-color: var(--ion-color-medium-tint);
+
+    margin: 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    color: var(--reputation-score-color);
+
+    &.good-score {
+      --reputation-score-color: var(--ion-color-success-shade);
+    }
+
+    &.bad-score {
+      --reputation-score-color: var(--ion-color-danger-shade);
+    }
+  }
+}
+
+.answer-item-details {
+  height: 100%;
+
+  // Override Ionic properties
+  @at-root ion-card#{&} {
+    --background: transparent;
+
+    margin: 0px;
+    // Remove card outline styles
+    box-shadow: none;
+
+    &::part(native) {
+      height: 100%;
+    }
+  }
+
+  ion-card-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .answer-description {
+    margin: 0px;
+    color: var(--ion-color-medium-shade);
+  }
+
+  .answer-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    // Override Ionic styles
+    ion-button {
+      --padding-start: 5px;
+      --padding-end: 5px;
+    }
+  }
+
+  .answer-secondary-info {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: var(--ion-color-medium-tint);
+
+    // To create a spece from the other elements
+    margin-top: auto;
+
+    .answer-secondary-attribute-title {
+      display: inline-block;
+    }
+
+    .answer-secondary-attribute-value {
+      display: inline-block;
+      font-weight: 500;
+      margin-inline-start: 4px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.answer-question-form-row {
+  margin: 24px 16px;
+
+  // Override Ionic properties
+  @at-root ion-row#{&} {
+    --ion-grid-column-padding: 0px;
+  }
+}
+
+.answer-form-input-description {
+  color: var(--ion-color-medium-shade);
+  font-size: 14px;
+}
+
+.answer-form-input-col {
+  margin-bottom: 40px;
+}
+
+.answer-form-input-item {
+  // Override Ionic styles
+  --padding-start: 0px;
+}

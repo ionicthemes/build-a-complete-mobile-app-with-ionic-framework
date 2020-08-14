@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Your Answer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="answerForm" (ngSubmit)="submitAnswer()">
+    <ion-row class="answer-question-form-row">
+      <ion-col size="12" class="answer-form-input-col">
+        <p class="answer-form-input-description">
+          Please be sure to answer the question. Provide details and share your research.
+        </p>
+        <ion-item class="answer-form-input-item">
+          <ion-label color="secondary" position="floating" fixed="true"><b>Description</b></ion-label>
+          <ion-textarea color="dark" formControlName="answer" auto-grow="true" placeholder="Enter the answer here ..." required></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button expand="block" color="secondary" size="large" type="submit" *ngIf="!answerToUpdate">Post your Answer</ion-button>
+        <ion-button expand="block" color="secondary" size="large" type="submit" *ngIf="answerToUpdate">Update your answer</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

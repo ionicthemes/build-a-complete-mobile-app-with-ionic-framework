@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "questions-and-answers-app",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

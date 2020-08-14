@@ -1,8 +1,7 @@
 {
-  "name": "q-a-example-ionic-app",
-  "app_id": "",
-  "type": "ionic-angular",
+  "name": "questions-and-answers-app",
   "integrations": {
-    "cordova": {}
-  }
+    "capacitor": {}
+  },
+  "type": "angular"
 }

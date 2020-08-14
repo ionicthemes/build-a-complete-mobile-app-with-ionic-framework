@@ -1,0 +1,48 @@
+.categories-listing-main-header {
+  // Override Ionic properties
+  @at-root ion-header#{&}.header-collapse-condense-inactive {
+    // To fix blink when page loads
+    ion-title {
+      visibility: hidden;
+    }
+  }
+}
+
+.categories-listing-main-toolbar {
+  // Override Ionic properties
+  @at-root ion-toolbar#{&} {
+    --background: transparent;
+    --color: var(--ion-color-dark);
+  }
+}
+
+ion-content {
+  position: absolute;
+  top: 0;
+  border-top: var(--app-header-height);
+  border-top-style: solid;
+  // Same as default ion-content background
+  border-top-color: #FFF;
+}
+
+.categories-call-out {
+  margin: 15px 20px 30px;
+  color: rgba(51, 51, 51, 0.8);
+  text-align: center;
+  line-height: 1.4;
+
+  ion-badge {
+    vertical-align: sub;
+    text-transform: uppercase;
+    margin: 0px 6px;
+  }
+}
+
+.category-card {
+  --color: #FFF;
+
+  ion-card-title,
+  ion-card-subtitle {
+    --color: #FFF;
+  }
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Ask a Question</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="askQuestionForm" (ngSubmit)="createQuestion()">
+    <ion-row class="ask-question-form-row">
+      <ion-col size="12" class="ask-form-input-col">
+        <p class="ask-form-input-description">
+          Please be specific and imagine you're asking a question to another person.
+        </p>
+        <ion-item class="ask-form-input-item">
+          <ion-label color="tertiary" position="floating" fixed="true"><b>Title</b></ion-label>
+          <ion-input color="dark" formControlName="title" placeholder="Enter the title of your question here..." type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" class="ask-form-input-col">
+        <p class="ask-form-input-description">
+          Include all the information someone would need to answer your question.
+        </p>
+        <ion-item class="ask-form-input-item">
+          <ion-label color="tertiary" position="floating" fixed="true"><b>Description</b></ion-label>
+          <ion-textarea rows="3" color="dark" formControlName="description" auto-grow="true" placeholder="Enter the description of your question here..." required></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button expand="block" color="tertiary" size="large" type="submit">Ask</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

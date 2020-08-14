@@ -1,0 +1,81 @@
+<ion-header class="category-details-main-header" class="ion-no-border">
+  <ion-toolbar class="category-details-main-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="learn" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Learn {{ category.title | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--category-color:{{category.color}}">
+  <div class="category-details-wrapper">
+    <div class="category-brief">
+      <ion-header collapse="condense">
+        <ion-toolbar class="category-brief-toolbar">
+          <ion-title>Learn all about {{ category.title }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <p class="category-description">
+        {{ category.description }}
+      </p>
+    </div>
+
+    <p class="questions-call-out" *ngIf="questions.length > 0">
+      <span>Find all the <b>Questions</b> and <b>Answers</b> about</span>
+      <ion-badge style="--background:{{category.color}}">{{ category.title }}</ion-badge>
+      <span>from the community</span>
+    </p>
+
+    <p class="questions-call-out" *ngIf="questions.length == 0">
+      <span>There are no questions on</span>
+      <ion-badge style="--background:{{category.color}}">{{ category.title }}</ion-badge>
+      <span>yet. Be the first to ask!</span>
+    </p>
+
+    <ion-row class="category-question-item-row" *ngFor="let question of questions">
+      <ion-col size="3" class="question-reputation-col">
+        <div class="question-score question-attribute">
+          <span class="question-score-title question-attribute-title">Votes</span>
+          <span class="question-score-value question-attribute-value" [ngClass]="{'good-score': (question.positiveVotes - question.negativeVotes) > 0, 'bad-score': (question.positiveVotes - question.negativeVotes) < 0}">
+            {{ question.positiveVotes + question.negativeVotes }}
+          </span>
+        </div>
+        <div class="question-answers question-attribute">
+          <span class="question-answers-title question-attribute-title">Answers</span>
+          <span class="question-answers-value question-attribute-value" [ngClass]="{'has-answers': (question.answersCount) > 0}">
+            {{ question.answersCount }}
+          </span>
+        </div>
+        <div class="question-actions">
+          <ion-button shape="round" expand="block" fill="clear" size="small" color="danger" (click)="deleteQuestion(question)">
+            Delete
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-card class="question-item-details" [routerLink]="['/questions', question._id, question.slug]">
+          <ion-card-content>
+            <h2 class="question-title">
+              {{ question.title }}
+            </h2>
+            <p class="question-description">
+              {{ question.description }}
+            </p>
+            <div class="question-secondary-info">
+              <div class="question-date">
+                <span class="question-secondary-attribute-title">Asked on </span>
+                <span class="question-secondary-attribute-value">{{ question.createdDate | date }}</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div slot="fixed" class="category-fixed-content">
+    <ion-button class="ask-question-btn" expand="block" color="tertiary" (click)="createQuestion()">
+      Have a Question? Ask!
+    </ion-button>
+  </div>
+</ion-content>

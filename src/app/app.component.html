@@ -1,0 +1,34 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list>
+          <ion-list-header>Tags</ion-list-header>
+          <ion-note>Filter categories to learn</ion-note>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" [routerLink]="['/learn']" [queryParams]="{topic: 'all'}" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
+              true}" lines="none" detail="false">
+              <ion-label>All</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" [routerLink]="['/learn']" [queryParams]="{topic: 'basic'}" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
+              true}" lines="none" detail="false">
+              <ion-label>Basic</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" [routerLink]="['/learn']" [queryParams]="{topic: 'advanced'}" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:
+              true}" lines="none" detail="false">
+              <ion-label>Advanced</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+</ion-app>

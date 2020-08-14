@@ -1,0 +1,251 @@
+.category-details-main-header {
+  // Override Ionic properties
+  @at-root ion-header#{&}.header-collapse-condense-inactive {
+    // To fix blink when page loads
+    ion-title {
+      visibility: hidden;
+    }
+  }
+}
+
+.category-details-main-toolbar {
+  // Override Ionic properties
+  @at-root ion-toolbar#{&} {
+    --background: transparent;
+    --color: var(--ion-color-light);
+  }
+}
+
+ion-content {
+  position: absolute;
+  top: 0;
+  border-top: var(--app-header-height);
+  border-top-style: solid;
+  border-top-color: var(--category-color);
+
+  .category-brief {
+    background-color: var(--category-color);
+  }
+}
+
+.category-details-wrapper {
+  padding-bottom: 70px;
+}
+
+.category-fixed-content {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  height: 70px;
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+}
+
+.ask-question-btn {
+  margin: 0;
+  flex: 1 0 100%;
+  height: 100%;
+
+  // Override Ionic properties
+  @at-root ion-button#{&} {
+    font-weight: 600;
+  }
+}
+
+.category-brief {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  // Override Ionic properties
+  ion-toolbar.category-brief-toolbar {
+    --background: transparent;
+    --border-width: 0px;
+
+    padding-top: 30px;
+
+    ion-title {
+      font-size: 20px;
+      padding: 0px;
+      color: #FFF;
+    }
+  }
+
+  .category-description {
+    margin: 20px 15%;
+    text-align: center;
+    color: #FFF;
+  }
+}
+
+.questions-call-out {
+  margin: 15px 20px 10px;
+  color: rgba(51, 51, 51, 0.8);
+  text-align: center;
+  line-height: 1.4;
+
+  ion-badge {
+    vertical-align: sub;
+    text-transform: uppercase;
+    margin: 0px 6px;
+  }
+}
+
+.category-question-item-row {
+  margin: 24px 16px;
+
+  // Override Ionic properties
+  @at-root ion-row#{&} {
+    --ion-grid-column-padding: 0px;
+  }
+
+  &:focus-within {
+    .question-attribute {
+      transition: transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1) 0s, -webkit-transform 500ms cubic-bezier(0.12, 0.72, 0.29, 1) 0s;
+      transform: scale3d(0.97, 0.97, 1);
+    }
+  }
+}
+
+.question-reputation-col {
+  padding-inline-end: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-attribute {
+  transform: translateZ(0px);
+  padding: 6px;
+  border-radius: 6px;
+  background-color: var(--ion-color-light);
+  border: 1px solid var(--ion-color-medium-tint);
+
+  & + .question-attribute{
+    margin-top: 10px;
+  }
+
+  .question-attribute-title {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: var(--ion-color-dark-tint);
+  }
+
+  .question-attribute-value {
+    margin: 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+  }
+}
+
+.question-score {
+  .question-score-value {
+    --question-score-color: var(--ion-color-medium-tint);
+
+    color: var(--question-score-color);
+
+    &.good-score {
+      --question-score-color: var(--ion-color-success-shade);
+    }
+
+    &.bad-score {
+      --question-score-color: var(--ion-color-danger-shade);
+    }
+  }
+}
+
+.question-answers {
+  .question-answers-value {
+    --question-score-color: var(--ion-color-medium-tint);
+
+    color: var(--question-score-color);
+
+    &.has-answers {
+      --question-score-color: var(--ion-color-success-shade);
+    }
+  }
+}
+
+.question-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 5px;
+
+  // Override Ionic styles
+  ion-button {
+    --padding-start: 5px;
+    --padding-end: 5px;
+
+    height: initial;
+    // This way it has the same height as the question-date
+    margin-top: 3px;
+    margin-bottom: 0px;
+  }
+}
+
+.question-item-details {
+  height: 100%;
+
+  // Override Ionic properties
+  @at-root ion-card#{&} {
+    --background: transparent;
+
+    margin: 0px;
+    // Remove card outline styles
+    box-shadow: none;
+
+    &::part(native) {
+      height: 100%;
+    }
+  }
+
+  ion-card-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .question-title {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    color: var(--ion-color-tertiary);
+  }
+
+  .question-description {
+    margin: 0px;
+    margin-bottom: 10px;
+    color: var(--ion-color-dark-tint);
+  }
+
+  .question-secondary-info {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: var(--ion-color-medium-tint);
+
+    // To create a spece from the other elements
+    margin-top: auto;
+
+    .question-secondary-attribute-title {
+      display: inline-block;
+    }
+
+    .question-secondary-attribute-value {
+      display: inline-block;
+      font-weight: 500;
+      margin-inline-start: 4px;
+    }
+  }
+}

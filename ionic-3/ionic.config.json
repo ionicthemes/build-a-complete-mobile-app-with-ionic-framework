@@ -1,0 +1,8 @@
+{
+  "name": "q-a-example-ionic-app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

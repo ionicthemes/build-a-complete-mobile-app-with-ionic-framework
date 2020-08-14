@@ -1,37 +1,42 @@
-This repository is part of an ionic tutorial that explains how to build an ionic example app with a question and answer format (Q&A). We will go through the core concepts of an Ionic 3 App such as Project Structure, Navigation, UI/UX and Data Integration. This ionic tutorial includes a working example you can reuse for your needs!
+# Build a complete mobile app with Ionic
+
+This repo is part of an ionic tutorial that explains how to build an ionic app with a question and answer format (Q&A). We will go through the core concepts of an Ionic Framework App such as Project Structure, Navigation, UI/UX and Data Integration with a NestJs API.
+
+This ionic tutorial includes a free ionic template you can reuse for your own project!
 
 
 **Please support this project by simply putting a Github star ⭐. Share this library with friends on Twitter and everywhere else you can. 🙏**
 
-Check the complete step by step tutorial in: https://ionicthemes.com/tutorials/about/building-a-complete-mobile-app-with-ionic-3
+[Follow the complete step by step tutorial](https://ionicthemes.com/build-a-complete-mobile-app-with-ionic-framework).
 
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_1.png?v=1)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_2.png?v=1)
-![](https://s3-us-west-2.amazonaws.com/ionicthemes/tutorials/screenshots/build-a-complete-mobile-app-with-ionic-2/app_4.png?v=1)
+<div>
+<img src="https://ionicthemes.s3-us-west-2.amazonaws.com/tutorials/screenshots/build-a-complete-mobile-app-with-ionic5/category-listing.png" width="270">
+<img src="https://ionicthemes.s3-us-west-2.amazonaws.com/tutorials/screenshots/build-a-complete-mobile-app-with-ionic5/category-details.png" width="270">
+<img src="https://ionicthemes.s3-us-west-2.amazonaws.com/tutorials/screenshots/build-a-complete-mobile-app-with-ionic5/question-details.png" width="270">
+</div>
 
-## Installation
-
-Install  dependencies
+## Install the Ionic app
 ```sh
 npm install
 ```
 
-## Run the app on the browser
+## Run the Ionic app on the browser
 
 ```sh
 ionic serve
 ```
 
-## Run the app on your phone
+## Run the ionic app on your phone
+This app is built with Capacitor. Check the [getting started guide](https://capacitorjs.com/docs/getting-started) to see how to run it on your device.
 
-```sh
-ionic cordova platform add android
-ionic cordova run android
-```
+## Demo
+- [Online demo](https://q-and-a-ionic-tutorial.web.app)
+- [Video preview](https://youtu.be/xj3Znnd4Evs)
 
-or
 
-```sh
-ionic cordova platform add ios
-ionic cordova run ios
-```
+## Get a complete Ionic 5 Starter App
+Did you know that we recently released [Ionic 5 Full Starter App PRO](https://ionicthemes.com/product/ionic5-full-starter-app-pro-version)? It has more than 125 carefully designed views and components, it will help you grasp best practices and the new concepts of Ionic 5 development.
+
+Try it both as a native app or as a full PWA on your mobile browser and **save yourself hundreds of hours of design and development**.
+
+<img src="https://ionicthemes.s3-us-west-2.amazonaws.com/cover_images/redesign/ionic5-full-starter-app-pro.jpg"/>

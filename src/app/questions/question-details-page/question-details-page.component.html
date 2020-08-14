@@ -1,0 +1,97 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="question-details-main-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="learn" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Question Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="question-details-wrapper">
+    <div class="question-brief">
+      <h2 class="question-title">
+        {{question.title}}
+      </h2>
+      <p class="question-description">
+        {{ question.description }}
+      </p>
+    </div>
+
+
+    <ion-row class="vote-question-box-row">
+      <ion-col class="vote-call-to-action">
+        <p class="call-to-action-message">
+          Was this question useful? <b>Rate it!</b>
+        </p>
+      </ion-col>
+      <ion-col size="2" class="vote-question-actions-col">
+        <ion-card class="vote-actions item-reputation">
+          <ion-button shape="round" expand="block" fill="clear" size="small" color="success" (click)="voteQuestion(1)">
+            <ion-icon name="chevron-up-outline"></ion-icon>
+          </ion-button>
+          <span class="reputation-score" [ngClass]="{'good-score': (question.positiveVotes - question.negativeVotes) > 0, 'bad-score': (question.positiveVotes - question.negativeVotes) < 0}">
+            {{ question.positiveVotes - question.negativeVotes }}
+          </span>
+          <ion-button shape="round" expand="block" fill="clear" size="small" color="danger" (click)="voteQuestion(-1)">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <p class="answers-call-out">
+      <span>We found</span>
+      <ion-badge color="light">{{ answers.length }}</ion-badge>
+      <span>
+        <b>answers</b> for this question.
+      </span>
+    </p>
+
+    <ion-row class="question-answer-item-row" *ngFor="let answer of answers">
+      <ion-col size="2" class="answer-reputation-col">
+        <ion-card class="item-reputation">
+          <ion-button shape="round" expand="block" fill="clear" size="small" color="success" (click)="voteAnswer(answer, 1)">
+            <ion-icon name="chevron-up-outline"></ion-icon>
+          </ion-button>
+          <span class="reputation-score" [ngClass]="{'good-score': (answer.positiveVotes - answer.negativeVotes) > 0, 'bad-score': (answer.positiveVotes - answer.negativeVotes) < 0}">
+            {{ answer.positiveVotes - answer.negativeVotes }}
+          </span>
+          <ion-button shape="round" expand="block" fill="clear" size="small" color="danger" (click)="voteAnswer(answer, -1)">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="answer-item-details">
+          <ion-card-content>
+            <p class="answer-description">
+              {{ answer.answer }}
+            </p>
+            <div class="answer-actions">
+              <ion-button shape="round" expand="block" fill="clear" size="small" color="secondary" (click)="updateAnswer(answer)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+              <ion-button shape="round" expand="block" fill="clear" size="small" color="danger" (click)="deleteAnswer(answer)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </div>
+            <div class="answer-secondary-info">
+              <div class="answer-date">
+                <span class="answer-secondary-attribute-title">Answered on </span>
+                <span class="answer-secondary-attribute-value">{{ answer.createdDate | date }}</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div slot="fixed" class="question-fixed-content">
+    <ion-button class="answer-question-btn" expand="block" color="secondary" (click)="openAnswerModal()">
+      Know the Answer? Don't be shy!
+    </ion-button>
+  </div>
+</ion-content>
