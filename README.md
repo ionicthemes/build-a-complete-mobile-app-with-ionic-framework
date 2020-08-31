@@ -5,7 +5,7 @@ This repo is part of an ionic tutorial that explains how to build an ionic app w
 This ionic tutorial includes a free ionic template you can reuse for your own project!
 
 
-**Please support this project by simply putting a Github star ⭐. Share this library with friends on Twitter and everywhere else you can. 🙏**
+**Please support this project by simply putting a Github star ⭐ 🙏**
 
 [Follow the complete step by step tutorial](https://ionicthemes.com/build-a-complete-mobile-app-with-ionic-framework).
 
