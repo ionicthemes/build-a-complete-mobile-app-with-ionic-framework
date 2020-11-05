@@ -1,6 +1,6 @@
 # Build a complete mobile app with Ionic
 
-This repo is part of an ionic tutorial that explains how to build an ionic app with a question and answer format (Q&A). We will go through the core concepts of an Ionic Framework App such as Project Structure, Navigation, UI/UX and Data Integration with a NestJs API.
+This repo is part of an ionic tutorial that explains how to build an ionic app with a question and answer format (Q&A). We will go through the core concepts of an Ionic Framework App such as Project Structure, Navigation, UI/UX and Data Integration with a [NestJs API](https://github.com/ionicthemes/questions-and-answers-tutorial-backend).
 
 This ionic tutorial includes a free ionic template you can reuse for your own project!
 
