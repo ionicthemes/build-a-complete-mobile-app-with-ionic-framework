@@ -7,7 +7,7 @@ This ionic tutorial includes a free ionic template you can reuse for your own pr
 
 **Please support this project by simply putting a Github star ⭐ 🙏**
 
-[Follow the complete step by step tutorial](https://ionicthemes.com/build-a-complete-mobile-app-with-ionic-framework).
+[Follow the complete step by step tutorial](https://ionicthemes.com/tutorials/about/build-a-complete-mobile-app-with-ionic-framework).
 
 <div>
 <img src="https://ionicthemes.s3-us-west-2.amazonaws.com/tutorials/screenshots/build-a-complete-mobile-app-with-ionic5/category-listing.png" width="270">
